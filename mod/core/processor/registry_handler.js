@@ -35,6 +35,12 @@ class RegistryHandler {
       )}]`
     )
 
+    LOG.debug(
+      `core.processor.RegistryHandler.doProcess [Request ${JSON.stringify(
+        request
+      )}]`
+    )
+
     try {
       this.sipProvider.sendRequest(request)
     } catch (e) {

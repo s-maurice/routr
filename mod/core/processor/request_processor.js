@@ -85,9 +85,11 @@ class RequestProcessor {
           !routeInfo.isLocalDomain() &&
           routeInfo.getCallerType() === RouteEntityType.THRU_GW
         ) {
+          LOG.debug('RegistryHandler Used')
           new RegistryHandler(this.sipProvider).doProcess(transaction)
           break
         }
+        LOG.debug('RegisterHandler Used')
         new RegisterHandler().doProcess(transaction)
         break
       case Request.CANCEL:
